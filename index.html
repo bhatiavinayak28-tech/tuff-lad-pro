@@ -114,6 +114,15 @@ html:not(.ios) .sl{background:rgba(255,91,31,.16);border:1px solid rgba(255,91,3
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+
+<meta name="theme-color" content="#0A0B0E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tuff Lad Pro">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
+
 </head>
 <body>
 <div id="app"></div>
@@ -317,5 +326,16 @@ document.addEventListener('change',function(e){var t=e.target;if(t.id==='role'){
 document.addEventListener('input',function(e){var t=e.target;if(t.id==='fex'){var g3=document.getElementById('fsg');if(g3)g3.innerHTML=SG2(t.value)}else if(t.id==='oex'){OM.ex=t.value;var sg2=document.getElementById('osg');if(sg2)sg2.innerHTML=SG(t.value)}else if(t.dataset.ex!==undefined){S.ex[t.dataset.ex][t.dataset.k]=t.value;sv()}else if(t.dataset.m!==undefined){S.dt.m[t.dataset.m]=t.value;sv()}else if(t.dataset.om!==undefined){S.members[OM.sel].dt.m[t.dataset.om]=t.value;sv()}});
 R();setTimeout(function(){if(intro){intro=false;R()}},4400);
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (err) {
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
+</script>
+
 </body>
 </html>
